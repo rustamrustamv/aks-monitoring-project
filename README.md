@@ -21,9 +21,9 @@ This diagram shows the final deployed architecture. Prometheus is configured to 
 graph TD
     subgraph "Azure Cloud (Managed by Terraform)"
         A[Resource Group]
-        B(Log Analytics)
-        C(AKS Cluster Control Plane)
-        D(3x Virtual Machine Nodes)
+        B[Log Analytics]
+        C[AKS Cluster Control Plane]
+        D[3x Virtual Machine Nodes]
         
         A --> B
         A --> C
@@ -34,15 +34,15 @@ graph TD
     subgraph "Kubernetes Cluster (aks-cluster-prod)"
         
         subgraph "monitoring (Namespace)"
-            F(Prometheus)
-            G(Grafana)
-            H(Alertmanager)
-            J[K8s ServiceMonitor (nginx-manual-monitor)]
+            F[Prometheus]
+            G[Grafana]
+            H[Alertmanager]
+            J[K8s ServiceMonitor: nginx-manual-monitor]
         end
 
         subgraph "ingress-nginx (Namespace)"
-            E(NGINX Ingress Controller)
-            I[K8s Service (ingress-nginx-controller-metrics)]
+            E[NGINX Ingress Controller]
+            I[K8s Service: ingress-nginx-controller-metrics]
         end
 
         F -- Scrapes (Node) --> D
