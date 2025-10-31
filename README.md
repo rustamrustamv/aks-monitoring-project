@@ -37,12 +37,12 @@ graph TD
             F(Prometheus)
             G(Grafana)
             H(Alertmanager)
-            J[K8s ServiceMonitor<br/>(nginx-manual-monitor)]
+            J[K8s ServiceMonitor (nginx-manual-monitor)]
         end
 
         subgraph "ingress-nginx (Namespace)"
             E(NGINX Ingress Controller)
-            I[K8s Service<br/>(ingress-nginx-controller-metrics)]
+            I[K8s Service (ingress-nginx-controller-metrics)]
         end
 
         F -- Scrapes (Node) --> D
