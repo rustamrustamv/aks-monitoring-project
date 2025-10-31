@@ -60,8 +60,6 @@ graph TD
 
  ```
 
-
-```markdown
 ## Core Technologies & Skills Demonstrated
 
 * **Cloud:** Microsoft Azure (AKS, Log Analytics)
