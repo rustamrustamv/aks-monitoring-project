@@ -61,9 +61,6 @@ graph TD
     ```
 
 
-    ---
-
-
 ```markdown
 ## Core Technologies & Skills Demonstrated
 
