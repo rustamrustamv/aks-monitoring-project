@@ -58,7 +58,7 @@ graph TD
     K -- 4. kubectl apply --> J
     K -- 5. Accesses --> G
 
-    ```
+ ```
 
 
 ```markdown
