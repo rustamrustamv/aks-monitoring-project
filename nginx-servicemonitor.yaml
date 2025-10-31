@@ -1,0 +1,24 @@
+# nginx-servicemonitor.yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  # 1. Create this in the "monitoring" namespace
+  namespace: monitoring
+  # 2. Add the "magic label" Prometheus is looking for
+  labels:
+    Release: prometheus 
+  name: ingress-nginx-manual-monitor
+spec:
+  # 3. Tell it to look in the "ingress-nginx" namespace
+  namespaceSelector:
+    matchNames:
+    - ingress-nginx
+  # 4. Tell it to find a Service with these exact 3 labels
+  selector:
+    matchLabels:
+      app.kubernetes.io/component: "controller"
+      app.kubernetes.io/instance: "ingress-nginx"
+      app.kubernetes.io/name: "ingress-nginx"
+  endpoints:
+  # 5. Tell it to scrape the port named "metrics"
+  - port: metrics
